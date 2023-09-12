@@ -4,14 +4,16 @@ namespace Personalregister
 {
     internal class Program
     {
-            private Personer personer = new Personer();
+            private PersonalLista personal = new PersonalLista();
+
         static void Main(string[] args)
         {
 
             Console.WriteLine("");
 
             // fösök att skapa en ny person.
-            personer.skapaNyPerson("Magnus","Fransson");
+            personal.skapaNyPerson("Magnus","Fransson");
+
         }
     }
 }

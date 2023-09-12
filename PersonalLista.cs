@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Personalregister
 {
-    internal class Personer
+    internal class PersonalLista
     {
         private Person[] personer = Array.Empty<Person>();
 
-        public Personer() { }
+        public PersonalLista() { }
 
         public void skapaNyPerson(string forNamn, string efterNamn)
         {

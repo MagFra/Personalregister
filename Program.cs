@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Personalregister
+﻿namespace Personalregister
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-        }
+            private Personer personer = new Personer;
+    }
     }
 }

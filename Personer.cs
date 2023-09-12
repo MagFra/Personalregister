@@ -10,11 +10,15 @@ namespace Personalregister
     {
         private Person[] personer = Array.Empty<Person>();
 
-        Personer() { }
+        public Personer() { }
 
         public void skapaNyPerson(string forNamn, string efterNamn)
         {
             this.personer.Append(new Person(forNamn, efterNamn));
+        }
+        public void skapaNyPerson(string forNamn, string efterNamn, int alder)
+        {
+            this.personer.Append(new Person(forNamn, efterNamn, alder));
         }
 
     }

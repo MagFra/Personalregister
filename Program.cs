@@ -4,7 +4,7 @@ namespace Personalregister
 {
     internal class Program
     {
-            private PersonalLista personal = new PersonalLista();
+            private readonly PersonalLista personal = new();
 
         static void Main(string[] args)
         {

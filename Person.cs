@@ -8,15 +8,15 @@ namespace Personalregister
 {
     internal class Person
     {
-        public string ForNamn { get => ForNamn; set => VerifyNamn(value); }
-        public string EfterNamn { get => EfterNamn; set => VerifyNamn(value); }
-        public int Lon { get => Lon; set => VerifyLon(value); }
-        public int Alder { get => Alder; set => VerifyAlder(value); }
+        public string ForNamn { get { return ForNamn; } set => VerifyNamn(value); }
+        public string EfterNamn { get { return EfterNamn; } set => VerifyNamn(value); }
+        public int Lon { get { return Lon; } set => VerifyLon(value); }
+        public int Alder { get { return Alder; } set => VerifyAlder(value); }
 
         public Person(string forNamn, string efterNamn,int lon)
         {
-            ForNamn = VerifyNamn(forNamn);
-            EfterNamn = VerifyNamn(efterNamn);
+            ForNamn = forNamn;   //VerifyNamn(forNamn);
+            EfterNamn = efterNamn;    //VerifyNamn(efterNamn);
             Lon = VerifyLon(lon);
         }
         public Person(string forNamn, string efterNamn, int lon, int alder)
@@ -33,6 +33,7 @@ namespace Personalregister
 
         private static string VerifyNamn(string namn)
         {
+            return namn;
             if (namn.Length == 0) 
             {
                 throw new ArgumentException("Ett namn saknas!"); // ToDo: Skapa en bättre hantering av detta fel. (Be användaren att mata in igen.)

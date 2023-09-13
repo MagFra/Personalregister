@@ -42,3 +42,7 @@ Skriv programmet
 Försök göra programmet så robust och framtidssäkert som möjligt!
 
 Bonus för att implementera test! (men inte på bekostnad av att den andra koden blir lidande)
+
+
+Nu har jag änligen "drbugg köra" ett vädigt begränsad program. Har absolut ingen input eller output. (Måste köras med bakepoints.)
+Men en person skapas så som planerat!

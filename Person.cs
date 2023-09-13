@@ -13,15 +13,17 @@ namespace Personalregister
         public int Lon { get => Lon; set => VerifyLon(value); }
         public int Alder { get => Alder; set => VerifyAlder(value); }
 
-        public Person(string forNamn, string efterNamn)
+        public Person(string forNamn, string efterNamn,int lon)
         {
             ForNamn = VerifyNamn(forNamn);
             EfterNamn = VerifyNamn(efterNamn);
+            Lon = VerifyLon(lon);
         }
-        public Person(string forNamn, string efterNamn, int alder)
+        public Person(string forNamn, string efterNamn, int lon, int alder)
         {
             ForNamn = VerifyNamn(forNamn);
             EfterNamn = VerifyNamn(efterNamn);
+            Lon = VerifyLon(lon);
             Alder = alder;
         }
 

@@ -8,31 +8,53 @@ namespace Personalregister
 {
     internal class Person
     {
-        private string forNamn;
-        private string efterNamn;
-        private int alder;
+        public string ForNamn { get => ForNamn; set => VerifyNamn(value); }
+        public string EfterNamn { get => EfterNamn; set => VerifyNamn(value); }
+        public int Lon { get => Lon; set => VerifyLon(value); }
+        public int Alder { get => Alder; set => VerifyAlder(value); }
 
         public Person(string forNamn, string efterNamn)
         {
-            this.setForNamn(forNamn);
-            this.setEfterNamn(efterNamn);
+            ForNamn = VerifyNamn(forNamn);
+            EfterNamn = VerifyNamn(efterNamn);
         }
-        public Person(string forNamn, string efterNamn, int alder )
+        public Person(string forNamn, string efterNamn, int alder)
         {
-            this.setForNamn(forNamn);
-            this.setEfterNamn(efterNamn);
-            this.setAlder(alder);
+            ForNamn = VerifyNamn(forNamn);
+            EfterNamn = VerifyNamn(efterNamn);
+            Alder = alder;
         }
 
-        public int getAlder() {  return this.alder; }
-        public string getEfterNamn() {  return this.efterNamn; }
-        public string getForNamn() { return this.forNamn; }
-        public string getFullName() {  return this.forNamn + " " + this.efterNamn; }
+        public string GetFullName() { return $"{this.ForNamn} {this.EfterNamn}"; }
 
-        public void setAlder(int alder) {  this.alder = alder; }
-        public void setForNamn(string forNamn) {  this.forNamn = forNamn;}
-        public void setEfterNamn(string EfterNamn) { this.efterNamn= EfterNamn;}
-        public void okaAlder() {  this.alder += 1; }
+        public void OkaAlder() { this.Alder++; }
+
+        private static string VerifyNamn(string namn)
+        {
+            if (namn.Length == 0) 
+            {
+                throw new ArgumentException("Ett namn saknas!"); // ToDo: Skapa en bättre hantering av detta fel. (Be användaren att mata in igen.)
+            }
+            return namn.Trim();
+        }
+
+        private static int VerifyLon(int lon)
+        {
+            if (lon < 0)
+            {
+                return 0;
+            }
+            return lon;
+        }
+
+        private static int VerifyAlder(int alder)
+        {
+            if (alder < 0)
+            {
+                return 0;
+            }
+            return alder;
+        }
 
     }
 }

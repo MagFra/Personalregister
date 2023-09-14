@@ -8,32 +8,42 @@ namespace Personalregister
 {
     internal class Person
     {
-        public string ForNamn { get { return ForNamn; } set => VerifyNamn(value); }
-        public string EfterNamn { get { return EfterNamn; } set => VerifyNamn(value); }
-        public int Lon { get { return Lon; } set => VerifyLon(value); }
-        public int Alder { get { return Alder; } set => VerifyAlder(value); }
+        private string forNamn;
+        public string ForNamn { get => forNamn;  set => forNamn = VerifyNamn(value); }
+
+        private string efterNamn;
+        public string EfterNamn { get => efterNamn; set => efterNamn = VerifyNamn(value); }
+
+        private int lon;
+        public int Lon { get => lon; set => lon = VerifyLon(value); }
+
+        private int alder;
+        public int Alder { get => alder; set => alder = VerifyAlder(value); }
+
+
+
 
         public Person(string forNamn, string efterNamn,int lon)
         {
-            ForNamn = forNamn;   //VerifyNamn(forNamn);
-            EfterNamn = efterNamn;    //VerifyNamn(efterNamn);
-            Lon = VerifyLon(lon);
+            this.forNamn = forNamn;   //VerifyNamn(forNamn);
+            this.efterNamn = efterNamn;    //VerifyNamn(efterNamn);
+            this.lon = VerifyLon(lon);
         }
         public Person(string forNamn, string efterNamn, int lon, int alder)
         {
-            ForNamn = VerifyNamn(forNamn);
-            EfterNamn = VerifyNamn(efterNamn);
-            Lon = VerifyLon(lon);
-            Alder = alder;
+            this.forNamn = VerifyNamn(forNamn);
+            this.efterNamn = VerifyNamn(efterNamn);
+            this.lon = VerifyLon(lon);
+            this.alder = alder;
         }
 
-        public string GetFullName() { return $"{this.ForNamn} {this.EfterNamn}"; }
+        public string GetFullName() => $"{this.forNamn} {this.efterNamn}";
 
-        public void OkaAlder() { this.Alder++; }
+        public void OkaAlder() { this.alder++; }
 
         private static string VerifyNamn(string namn)
         {
-            return namn;
+            // return namn;
             if (namn.Length == 0) 
             {
                 throw new ArgumentException("Ett namn saknas!"); // ToDo: Skapa en bättre hantering av detta fel. (Be användaren att mata in igen.)

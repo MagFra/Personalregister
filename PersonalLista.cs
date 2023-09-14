@@ -11,27 +11,26 @@ namespace Personalregister
     {
         private List<Person> personal = new List<Person>(0);
 
-        // public PersonalLista() { }
+        //public PersonalLista() { personal = new List<Person>[12]; }
 
-        public void skapaNyPerson(string forNamn, string efterNamn, int lon)
+        public void SkapaNyPerson(string forNamn, string efterNamn, int lon)
         {
-            this.personal.Append(new Person(forNamn, efterNamn,lon));
+            Person temp = new Person(forNamn, efterNamn, lon);
+            this.personal.Add(temp);
         }
-        public void skapaNyPerson(string forNamn, string efterNamn, int lon, int alder)
+        public void SkapaNyPerson(string forNamn, string efterNamn, int lon, int alder)
         {
             this.personal.Append(new Person(forNamn, efterNamn, lon, alder));
         }
 
-        public string[] SkrivUtLista()
+        internal void SkrivUtLista()
         {
-            string[] result = new string[personal.Count];
-
-            for (int i = 0; i < personal.Count; i++)
+            string temp2;
+            foreach (var item in personal)
             {
-                result[i] = $"Namn: {personal[i].GetFullName}\tLön: {personal[i].Lon} kr/månad";
+                temp2 = item.GetFullName();
+                Console.WriteLine($"Namn: {temp2}\tLön: {item.Lon} kr/månad");
             }
-            return result;
         }
-
     }
 }

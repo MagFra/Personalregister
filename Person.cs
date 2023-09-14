@@ -37,6 +37,7 @@ namespace Personalregister
             this.alder = alder;
         }
 
+        public override string ToString() => $"Namn: {this.forNamn} {this.efterNamn}\tLön: {this.Lon} kr/månad";
         public string GetFullName() => $"{this.forNamn} {this.efterNamn}";
 
         public void OkaAlder() { this.alder++; }

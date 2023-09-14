@@ -23,14 +23,15 @@ namespace Personalregister
             this.personal.Append(new Person(forNamn, efterNamn, lon, alder));
         }
 
-        internal void SkrivUtLista()
+        internal List<string> AlternativLista()
         {
-            string temp2;
+            List<string> list = new();
             foreach (var item in personal)
             {
-                temp2 = item.GetFullName();
-                Console.WriteLine($"Namn: {temp2}\tLön: {item.Lon} kr/månad");
+                list.Add(item.ToString());
             }
+            return list;
         }
+
     }
 }

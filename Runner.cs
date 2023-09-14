@@ -25,8 +25,11 @@ namespace Personalregister
             personal.SkapaNyPerson("Lena", "Sötnos", 30000);
 
 
-            personal.SkrivUtLista();
-            
+            List<string> list = personal.AlternativLista();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }

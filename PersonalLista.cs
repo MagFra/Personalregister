@@ -32,6 +32,5 @@ namespace Personalregister
             }
             return list;
         }
-
     }
 }

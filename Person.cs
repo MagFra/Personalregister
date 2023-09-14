@@ -40,11 +40,10 @@ namespace Personalregister
         public override string ToString() => $"Namn: {this.forNamn} {this.efterNamn}\tLön: {this.Lon} kr/månad";
         public string GetFullName() => $"{this.forNamn} {this.efterNamn}";
 
-        public void OkaAlder() { this.alder++; }
+        public void OkaAlder() => this.alder++;
 
         private static string VerifyNamn(string namn)
         {
-            // return namn;
             if (namn.Length == 0) 
             {
                 throw new ArgumentException("Ett namn saknas!"); // ToDo: Skapa en bättre hantering av detta fel. (Be användaren att mata in igen.)
